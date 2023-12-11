@@ -10,7 +10,7 @@ app.use("/",(req,res)=>{
 app.listen(9000,()=>{
 
 
-    console.log('starting server on port 9000');
+    console.log('starting server ii on port 9000');
 })
 
 // let record=[];
