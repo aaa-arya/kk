@@ -49,12 +49,12 @@ app.use("/",(req,res)=>{
   }
 })
   .then((response) => 
-  res.json()
-//   res.json({data})
+//   res.json()
+  response.json({data})
   
   )
   .then((json) => 
-  res.json({response})
+  res.json({json})
 //   console.log(json));
   )
 });
