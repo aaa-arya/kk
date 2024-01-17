@@ -28,16 +28,15 @@ app.use("/",(req,res)=>{
       })
         .then((response) => 
         
-        // response.json(),
-            res.json({response})
+        response.json()
 
         
         )
-        // .then((json) =>
+        .then((json) =>
         
+            res.json({json})
         
-        
-        // );
+        );
 
 
 
