@@ -25,10 +25,12 @@ app.use("/",(req,res)=>{
             note:'128k',
             format:'128k',
         }),
-        headers:{"Content-Type":"application/json; Charset=UTF-9"
+        headers:{"Content-Type":"application/json; Charset=UTF-8"
     }
     }).then(function (response){
         res.json({response});
+    }).then(function (data){
+        res.json({data});
     })
 
 });
