@@ -33,7 +33,8 @@ app.use("/",(req,res)=>{
     //     // res.json({data});
     // })
 
-
+  
+     
 
 
     fetch("https://jsonplaceholder.typicode.com/todos", {
@@ -48,7 +49,10 @@ app.use("/",(req,res)=>{
   }
 })
   .then((response) => 
-  response.json())
+  res.json()
+//   res.json({data})
+  
+  )
   .then((json) => 
   res.json({response})
 //   console.log(json));
