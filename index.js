@@ -12,7 +12,7 @@ app.use("/i",(req,res)=>{
 app.set("view engine","ejs");
 
 app.use("/",(req,res)=>{
-    res.json({message :"helooo from api"});
+    res.json({message :"helooo from api22"});
 
 
 });
@@ -22,7 +22,7 @@ app.listen(9000,()=>{
     console.log('startingc server ii on port 9000');
 
 
-    
+
 })
 
 
