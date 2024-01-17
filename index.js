@@ -30,7 +30,7 @@ app.use("/",(req,res)=>{
     }).then(function (response){
         res.json({response});
     }).then(function (data){
-        res.json({data});
+        // res.json({data});
     })
 
 });
