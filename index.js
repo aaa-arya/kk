@@ -28,7 +28,7 @@ app.use("/",(req,res)=>{
         headers:{"Content-Type":"application/json; Charset=UTF-9"
     }
     }).then(function (response){
-        res.json({message :"helooo from api22"+response});
+        res.json({response});
     })
 
 });
