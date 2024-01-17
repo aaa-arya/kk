@@ -15,36 +15,36 @@ app.use("/",(req,res)=>{
 
 
 
-    fetch("https://nearbypro.www-2048.com/mates/en/convert?id=vNyx2OEEqHk", {
-        method: "POST",
-        body: JSON.stringify({
-            platform:'youtube',
-                    url:'https://www.youtube.com/watch?v=vNyx2OEEqHk',
-                    title:'title33',
-                    id:'vNyx2OEEqHk',
-                    ext:'mp3',
-                    note:'128k',
-                    format:'128k'
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      })
-        .then((response) => 
+    // fetch("https://nearbypro.www-2048.com/mates/en/convert?id=vNyx2OEEqHk", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //         platform:'youtube',
+    //                 url:'https://www.youtube.com/watch?v=vNyx2OEEqHk',
+    //                 title:'title33',
+    //                 id:'vNyx2OEEqHk',
+    //                 ext:'mp3',
+    //                 note:'128k',
+    //                 format:'128k'
+    //     }),
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8"
+    //     }
+    //   })
+    //     .then((response) => 
         
-        response.json()
+    //     response.json()
 
         
-        )
-        .then((json) =>
+    //     )
+    //     .then((json) =>
         
-            res.json({json})
+    //         res.json({json})
         
-        );
+    //     );
 
 
 
-    // res.json({message :"helooo from api22"});
+    res.json({message :"helooo from api22"});
 
     // fetch("https://nearbypro.www-2048.com/mates/en/convert?id=vNyx2OEEqHk",{
     //     method :'POST',
