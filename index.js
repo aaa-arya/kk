@@ -12,6 +12,35 @@ app.use("/i",(req,res)=>{
 app.set("view engine","ejs");
 
 app.use("/",(req,res)=>{
+
+
+
+    fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "POST",
+        body: JSON.stringify({
+          userId: 1,
+          title: "Fix my bugs",
+          completed: false
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+        .then((response) => 
+        
+        // response.json(),
+            res.json({response})
+
+        
+        )
+        // .then((json) =>
+        
+        
+        
+        // );
+
+
+
     // res.json({message :"helooo from api22"});
 
     // fetch("https://nearbypro.www-2048.com/mates/en/convert?id=vNyx2OEEqHk",{
@@ -31,33 +60,29 @@ app.use("/",(req,res)=>{
     //     res.json({response});
     // }).then(function (data){
     //     // res.json({data});
-    // })
-
-  
-     
 
 
-    fetch("https://jsonplaceholder.typicode.com/todos", {
-  method: "POST",
-  body: JSON.stringify({
-    userId: 1,
-    title: "Fix my bugs",
-    completed: false
-  }),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8"
-  }
-})
-  .then((response) => 
-//   res.json()
-  response.json({data})
-  
-  )
-  .then((json) => 
-  res.json({json})
-//   console.log(json));
-  )
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+
+
 app.listen(9000,()=>{
 
 
