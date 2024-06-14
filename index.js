@@ -43,6 +43,11 @@ app.use("/",(req,res)=>{
     //     );
 
 
+
+    var reelId=req.get("id");
+
+    res.json(reelId);
+
     fetch("https://download.solutionexist.com/wp-json/aio-dl/video-data/", {
   method: "POST",
   body: JSON.stringify({
@@ -62,7 +67,9 @@ app.use("/",(req,res)=>{
   .then((json) =>
     
     res.json(json)
-    // console.log(json)
+
+
+
 
 );
 
