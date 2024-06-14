@@ -45,8 +45,9 @@ app.use("/",(req,res)=>{
 
 
     var reelId=req.get("id");
+    res.json({message :"helooo from api22"});
 
-    res.json("reelId");
+
 
 //     fetch("https://download.solutionexist.com/wp-json/aio-dl/video-data/", {
 //   method: "POST",
