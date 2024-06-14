@@ -45,7 +45,7 @@ app.use("/",(req,res)=>{
 
 
     var reelId=req.get("id");
-    res.json({message :"helooo from api22"});
+    res.json({message :reelId});
 
 
 
