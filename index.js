@@ -43,8 +43,31 @@ app.use("/",(req,res)=>{
     //     );
 
 
+    fetch("https://download.solutionexist.com/wp-json/aio-dl/video-data/", {
+  method: "POST",
+  body: JSON.stringify({
+    url: "https://www.instagram.com/reel/Cs8QeljvgKD",
+    token: "bb797a7dc66d64c3c43810c21153d56b75df41d4b2a0d253bb45741d1c6b0801",
+    hash: "aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9yZWVsL0NzOFFlbGp2Z0tE1042YWlvLWRs"
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+})
+  .then((response) => 
 
-    res.json({message :"helooo from api22"});
+    response.json()
+
+)
+  .then((json) =>
+    
+    res.json(json)
+    // console.log(json)
+
+);
+
+
+    // res.json({message :"helooo from api22"});
 
     // fetch("https://nearbypro.www-2048.com/mates/en/convert?id=vNyx2OEEqHk",{
     //     method :'POST',
