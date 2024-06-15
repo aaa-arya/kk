@@ -60,7 +60,7 @@ app.use('/video',(req,res)=>{
 
 
 
-  ffmpeg("path.mp4")
+  ffmpeg(videoUrl)
 .videoCodec('libx264')
   .size('400x720')
 .format('mp4')
