@@ -28,7 +28,7 @@ app.use('/video',(req,res)=>{
   const path = Path.resolve(__dirname, 'media', 'video.mp4');//D:\material\VS CODE\WEBREQUEST\iii\media\video.mp4
   
   ffmpeg.setFfmpegPath(ffmpegPath);
-  res.json("okkkk done");
+  // res.json("okkkk done");
 
 //   ffmpeg(videoUrl)
 // .videoCodec('libx264')
@@ -52,22 +52,24 @@ app.use('/video',(req,res)=>{
 //     console.log(path);
 //       //  fs.unlinkSync(path);//To delete file
 
-//     const file = fs.createWriteStream("path.mp4");
+//     const file = fs.createWriteStream("./path.mp4");
 // const request = http.get(videoUrl, function(response) {
 //    response.pipe(file);
 //   //  res.pipe(file);
 // });
 
-//   ffmpeg("path.mp4")
-// .videoCodec('libx264')
-//   // .size('400x720')
-// .format('mp4')
-// .outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
-// .output(res,{ end:true })
-// .on('error', function(err, stdout, stderr) {
-// console.log('an error happened: ' + err.message + stdout + stderr);
-// })
-// .run();
+
+
+  ffmpeg("path.mp4")
+.videoCodec('libx264')
+  .size('400x720')
+.format('mp4')
+.outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
+.output(res,{ end:true })
+.on('error', function(err, stdout, stderr) {
+console.log('an error happened: ' + err.message + stdout + stderr);
+})
+.run();
 
 
 
