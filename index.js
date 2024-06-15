@@ -8,18 +8,13 @@ const port=9000;
 app.use("/i",(req,res)=>{
     res.render("index");
 
+    
+
 
 });
 
 
 app.set("view engine","ejs");
-
-
- 
-
-
-
-
 
   
  //Here Create Download link of instahram reels
@@ -27,6 +22,7 @@ app.set("view engine","ejs");
         var reelId=req.query.id;
          var hash = btoa('https://www.instagram.com/reel/'+reelId);
         
+
         fetch("https://download.solutionexist.com/", {
             method: "GET",
             headers: {
@@ -67,14 +63,13 @@ function SendRequest( reelId,token,hash,res){
         .then((response) => 
        response.json() )
         .then((json) =>
-          
-          res.json(json)
+        
+{
+  res.statusCode(200);
+        res.json(json);
       
-      
-      
-      
-                    
-      );
+}        
+        );
       
       
   }
