@@ -63,12 +63,10 @@ function SendRequest( reelId,token,hash,res){
         .then((response) => 
        response.json() )
         .then((json) =>
-        
-{
-  res.statusCode(200);
-        res.json(json);
+  
+        res.json(json)
       
-}        
+   
         );
       
       
