@@ -6,8 +6,10 @@ const http = require('https'); // or 'https' for https:// URLs
 const Path = require('path')
   const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
   const ffmpeg = require('fluent-ffmpeg');
+const { getServers } = require('dns');
 
 const app=express();
+
 const port=9000;
 
 
@@ -30,16 +32,16 @@ app.use('/video',(req,res)=>{
   ffmpeg.setFfmpegPath(ffmpegPath);
   // res.json("okkkk done");
 
-//   ffmpeg(videoUrl)
-// .videoCodec('libx264')
-//   .size('400x720')
-// .format('mp4')
-// .outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
-// .output(res,{ end:true })
-// .on('error', function(err, stdout, stderr) {
-// console.log('an error happened: ' + err.message + stdout + stderr);
-// })
-// .run();
+  ffmpeg(videoUrl)
+.videoCodec('libx264')
+  .size('400x720')
+.format('mp4')
+.outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
+.output(res,{ end:true })
+.on('error', function(err, stdout, stderr) {
+console.log('an error happened: ' + err.message + stdout + stderr);
+})
+.run();
 
 
 
@@ -60,16 +62,16 @@ app.use('/video',(req,res)=>{
 
 
 
-  ffmpeg(videoUrl)
-.videoCodec('libx264')
-  .size('400x720')
-.format('mp4')
-.outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
-.output(res,{ end:true })
-.on('error', function(err, stdout, stderr) {
-console.log('an error happened: ' + err.message + stdout + stderr);
-})
-.run();
+//   ffmpeg(videoUrl)
+// .videoCodec('libx264')
+//   .size('400x720')
+// .format('mp4')
+// .outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
+// .output(res,{ end:true })
+// .on('error', function(err, stdout, stderr) {
+// console.log('an error happened: ' + err.message + stdout + stderr);
+// })
+// .run();
 
 
 
@@ -252,6 +254,7 @@ app.use("/",(req,res)=>{
     });
 
 
+    
 app.listen(9000,()=>{
 
 
