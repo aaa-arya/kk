@@ -43,7 +43,7 @@ app.set("view engine","ejs");
               var end=htmltext.indexOf('downloadBtn');
 
               var token=htmltext.substring(start+20,end-59);
-              SendRequest(reelId,token,hash,res);
+             SendRequest(reelId,token,hash,res);
               
             
  });
@@ -74,12 +74,10 @@ function SendRequest( reelId,token,hash,res){
       
       
                     
-                );
+      );
       
       
   }
-
-
 
 
 
