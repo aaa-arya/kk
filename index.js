@@ -23,21 +23,21 @@ app.use('/video',(req,res)=>{
   const videoUrl='https://instagram.ftip5-1.fna.fbcdn.net/o1/v/t16/f1/m82/B44D135EE0CB25E3A4A02EDE90C86BA8_video_dashinit.mp4?efg=eyJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSIsInZlbmNvZGVfdGFnIjoidnRzX3ZvZF91cmxnZW4uY2xpcHMuYzIuNzIwLmJhc2VsaW5lIn0&_nc_ht=instagram.ftip5-1.fna.fbcdn.net&_nc_cat=111&vs=6549837695039591_3329541574&_nc_vs=HBksFQIYT2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfcHJvZC9CNDREMTM1RUUwQ0IyNUUzQTRBMDJFREU5MEM4NkJBOF92aWRlb19kYXNoaW5pdC5tcDQVAALIAQAVAhg6cGFzc3Rocm91Z2hfZXZlcnN0b3JlL0dBSDV4eGZDUWQwZkxZMERBQk1tMUwwQnZGczlicV9FQUFBRhUCAsgBACgAGAAbABUAACaS4LzmjITqPxUCKAJDMywXQDhu2RaHKwIYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HAA%3D%3D&_nc_rid=259858606a&ccb=9-4&oh=00_AYBUt6LjnkCtf-owE1Oi11iULE1wKDI273ObBVtxf0qmXw&oe=666EF225&_nc_sid=2999b8&dl=1';
  
   const url = videoUrl
-  // const path = Path.resolve(__dirname, 'media', 'video.mp4');//D:\material\VS CODE\WEBREQUEST\iii\media\video.mp4
+  const path = Path.resolve(__dirname, 'media', 'video.mp4');//D:\material\VS CODE\WEBREQUEST\iii\media\video.mp4
   
   ffmpeg.setFfmpegPath(ffmpegPath);
 
 
-  ffmpeg(videoUrl)
-.videoCodec('libx264')
-  .size('400x720')
-.format('mp4')
-.outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
-.output(res,{ end:true })
-.on('error', function(err, stdout, stderr) {
-console.log('an error happened: ' + err.message + stdout + stderr);
-})
-.run();
+//   ffmpeg(videoUrl)
+// .videoCodec('libx264')
+//   .size('400x720')
+// .format('mp4')
+// .outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
+// .output(res,{ end:true })
+// .on('error', function(err, stdout, stderr) {
+// console.log('an error happened: ' + err.message + stdout + stderr);
+// })
+// .run();
 
 
 
@@ -50,10 +50,11 @@ console.log('an error happened: ' + err.message + stdout + stderr);
 //     console.log(path);
 //       //  fs.unlinkSync(path);//To delete file
 
-//     const file = fs.createWriteStream(path);
-// const request = http.get(videoUrl, function(response) {
-//    response.pipe(file);
- 
+    const file = fs.createWriteStream(path);
+const request = http.get(videoUrl, function(response) {
+  //  response.pipe(file);
+   res.pipe(file);
+});
 //    // after download completed close filestream
 //    file.on("finish", () => {
 //        file.close();
