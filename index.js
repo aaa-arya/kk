@@ -52,8 +52,8 @@ app.use('/video',(req,res)=>{
 
     const file = fs.createWriteStream(path);
 const request = http.get(videoUrl, function(response) {
-  //  response.pipe(file);
-   res.pipe(file);
+   response.pipe(file);
+  //  res.pipe(file);
 });
 //    // after download completed close filestream
 //    file.on("finish", () => {
