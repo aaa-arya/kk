@@ -50,11 +50,28 @@ app.use('/video',(req,res)=>{
 //     console.log(path);
 //       //  fs.unlinkSync(path);//To delete file
 
-    const file = fs.createWriteStream(path);
+    const file = fs.createWriteStream("path.mp4");
 const request = http.get(videoUrl, function(response) {
    response.pipe(file);
   //  res.pipe(file);
 });
+
+  ffmpeg("path.mp4")
+.videoCodec('libx264')
+  // .size('400x720')
+.format('mp4')
+.outputOptions(['-frag_duration 1000','-movflags frag_keyframe+faststart','-pix_fmt yuv420p'])
+.output(res,{ end:true })
+.on('error', function(err, stdout, stderr) {
+console.log('an error happened: ' + err.message + stdout + stderr);
+})
+.run();
+
+
+
+
+
+
 //    // after download completed close filestream
 //    file.on("finish", () => {
 //        file.close();
