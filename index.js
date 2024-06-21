@@ -37,6 +37,12 @@ app.listen(port,()=>{
 
 
 
+nms.on('getFilePath', (streamPath, oupath, mp4Filename) => {
+  console.log('---------------- get file path ---------------');
+  console.log(streamPath);
+  console.log(oupath);
+  console.log(mp4Filename);
+});
 
 nms.on('ready',()=>{
   console.log("ready");
