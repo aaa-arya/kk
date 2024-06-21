@@ -1,13 +1,13 @@
 const  NodeMediaServer  = require('node-media-server');
-// const express=require('express');
-// const app=express();
+const express=require('express');
+const app=express();
 const port=1935;
 
 
 
 const config = {
   rtmp: {
-      port: 1935,
+      port: 1935,//
       chunk_size: 60000,
       gop_cache: true,
       ping: 60,
@@ -20,20 +20,20 @@ const config = {
 };
 var nms = new NodeMediaServer(config);
   nms.run();
-// app.get('/',(req,res)=>{
-//   console.log('request');
+app.get('/',(req,res)=>{
+  console.log('request');
 
 
 
-// })
+})
 
-// app.listen(port,()=>{
+app.listen(port,()=>{
 
-//   console.log('runing server 12');
+  console.log('runing server 12');
 
 
 
-// })
+})
 
 
 
